@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In</title>
+    <!-- ========== Start FontAwesome ========== -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- ========== End FontAwesome ========== -->
+    <!-- ========== Start Bootstrap ========== -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- ========== End Bootstrap ========== -->
+    <!-- ========== Start Css File ========== -->
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- ========== End Css File ========== -->
+  </head>
+  <body>
+    <section id="sign-in">
+      <div
+        class="container-fluid linear vh-100 d-flex align-items-center justify-content-center"
+      >
+        <form id="signIn-form" onsubmit="return signIn()">
+          <div class="card px-5 py-4 rounded-4">
+            <div class="logo">
+              <header>
+                <h1
+                  class="text-uppercase text-center montserrat-bold fs-32 position-relative h1-design fit-content"
+                >
+                  Campus Control
+                </h1>
+              </header>
+            </div>
+
+            <div class="card-info text-center">
+              <h2 class="text-uppercase fs-22 montserrat-semiBold">sign in</h2>
+              <p class="montserrat-regular fs-14 gray-color">
+                Enter your credentials to access your account
+              </p>
+              <p
+                id="errorMessage"
+                class="errorMsg text-danger montserrat-regular fs-14 text-center text-capitalize m-0"
+              ></p>
+            </div>
+
+            <div class="card-inputs pt-2">
+              <div class="email-form">
+                <label for="emailInput" class="gray-color fs-14 montserrat-med"
+                  >Email</label
+                >
+                <input
+                  class="w-100 p-2 border rounded mt-1"
+                  type="email"
+                  required
+                  id="emailInput"
+                  placeholder="Enter Your email"
+                />
+              </div>
+              <div class="password-form mt-3">
+                <label
+                  for="passwordInput"
+                  class="gray-color fs-14 montserrat-med"
+                  >Password</label
+                >
+                <input
+                  class="w-100 p-2 border rounded mt-1"
+                  type="password"
+                  id="passwordInput"
+                  placeholder="Enter Your password"
+                />
+              </div>
+            </div>
+            <div
+              class="password-information d-flex align-items-center justify-content-between fs-14 montserrat-regular my-3"
+            >
+              <div class="d-flex align-items-center">
+                <input type="checkbox" id="rememberMe" />
+                <label for="rememberMe" class="ps-1">Remember Me</label>
+              </div>
+              <div>
+                <a
+                  href="resetPassword.html"
+                  class="resetPassword-link text-main-color"
+                  >Forget Password?</a
+                >
+              </div>
+            </div>
+            <div class="input-btn">
+              <button
+                onclick="signIn()"
+                class="btn text-center w-100 bg-main-color text-white text-uppercase montserrat-semiBold"
+              >
+                sign in
+              </button>
+            </div>
+            <div class="register mt-2">
+              <p class="text-center fs-14 montserrat-regular text-capitalize">
+                don't have an account?
+                <span
+                  ><a href="register.html" class="register-link text-main-color"
+                    >Register</a
+                  ></span
+                >
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== Start Bootstrap ========== -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- ========== End Bootstrap ========== -->
+    <!-- ========== Start js File ========== -->
+    <script src="js/index.js"></script>
+    <!-- ========== End js File ========== -->
+  </body>
+</html>

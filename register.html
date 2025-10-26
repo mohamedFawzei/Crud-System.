@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <!-- ========== Start FontAwesome ========== -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- ========== End FontAwesome ========== -->
+    <!-- ========== Start Bootstrap ========== -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- ========== End Bootstrap ========== -->
+    <!-- ========== Start Css File ========== -->
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- ========== End Css File ========== -->
+  </head>
+  <body>
+    <section id="registration-form">
+      <div
+        class="container-fluid linear vh-100 d-flex align-items-center justify-content-center"
+      >
+        <form id="register-form">
+          <div class="card pt-4 px-5">
+            <div class="logo">
+              <header>
+                <h1
+                  class="text-uppercase text-center montserrat-bold fs-32 position-relative h1-design fit-content mx-auto"
+                >
+                  Campus Control
+                </h1>
+              </header>
+              <article class="subTitle text-center">
+                <p class="montserrat-regular fs-14 gray-color text-capitalize">
+                  create your account. it's free and only takes a minute
+                </p>
+              </article>
+            </div>
+
+            <div class="card-inputs">
+              <div class="row">
+                <div class="col-12 col-md-6">
+                  <div class="firstName mt-2">
+                    <input
+                      type="text"
+                      id="firstNameInput"
+                      class="w-100 p-2 border rounded gray-color fs-14 montserrat-med"
+                      placeholder="First Name"
+                    />
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div class="lastName mt-2">
+                    <input
+                      type="text"
+                      id="lastNameInput"
+                      class="w-100 p-2 border rounded gray-color fs-14 montserrat-med"
+                      placeholder="Last Name"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="profile-picture-upload mt-2 text-center">
+                <label
+                  for="profilePictureInput"
+                  class="form-label gray-color fs-14 montserrat-med"
+                  >Profile Picture</label
+                >
+                <input
+                  type="file"
+                  class="form-control"
+                  id="profilePictureInput"
+                  accept="image/*"
+                />
+              </div>
+              <div class="emailRegister mt-2">
+                <input
+                  type="email"
+                  name="email"
+                  id="emailRegister"
+                  class="w-100 p-2 border rounded gray-color fs-14 montserrat-med"
+                  placeholder="Enter Your Email"
+                />
+              </div>
+              <div class="custom-select-wrapper mt-2">
+                <div class="custom-select montserrat-med text-capitalize">
+                  <div class="custom-select-trigger">
+                    <span>Select your role...</span>
+                    <i class="fa-solid fa-chevron-down arrow"></i>
+                  </div>
+                  <div class="custom-options">
+                    <span class="custom-option" data-value="student"
+                      >Student</span
+                    >
+                    <span class="custom-option" data-value="teacher"
+                      >Teacher</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="phone mt-2">
+                <input
+                  type="number"
+                  name="number"
+                  id="phoneRegister"
+                  class="w-100 p-2 border rounded gray-color fs-14 montserrat-med"
+                  placeholder="Enter Your Number"
+                />
+              </div>
+              <div class="passRegister mt-2">
+                <input
+                  type="password"
+                  name="password"
+                  id="passRegister"
+                  class="w-100 p-2 border rounded gray-color fs-14 montserrat-med"
+                  placeholder="Enter Your Password"
+                />
+              </div>
+              <div class="confirmPass mt-2">
+                <input
+                  type="password"
+                  name="ConfirmPassword"
+                  id="confirmPassRegister"
+                  class="w-100 p-2 border rounded gray-color fs-14 montserrat-med"
+                  placeholder="Confirm Your Password"
+                />
+              </div>
+              <div class="terms mt-2">
+                <p class="d-flex align-items-center justify-content-start">
+                  <input type="checkbox" id="termsCheckBox" />
+                  <span
+                    class="gray-color fs-14 montserrat-med text-capitalize ps-2"
+                    >I accept the
+                    <span
+                      ><a
+                        href=""
+                        class="terms-a text-main-color text-decoration-none"
+                        >Terms of Use</a
+                      ></span
+                    >
+                    &
+                    <span
+                      ><a
+                        href="#"
+                        class="policy-a text-main-color text-decoration-none"
+                        >Privacy Policy</a
+                      >
+                    </span></span
+                  >
+                </p>
+              </div>
+              <div class="register-btn">
+                <button
+                  onclick="return register()"
+                  type="button"
+                  class="btn text-center w-100 bg-main-color text-white text-uppercase montserrat-semiBold"
+                >
+                  Register Now
+                </button>
+                <p
+                  id="registerMessage"
+                  class="registerMsg text-center mt-3 mb-0 fs-14 montserrat-med text-capitalize text-danger"
+                ></p>
+              </div>
+            </div>
+            <div class="backToSignIn mt-1">
+              <p class="text-center fs-14 montserrat-regular text-capitalize">
+                Already have an account?
+                <span
+                  ><a href="index.html" class="signIn-a text-main-color"
+                    >Sign in</a
+                  ></span
+                >
+              </p>
+            </div>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========== Start Bootstrap ========== -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- ========== End Bootstrap ========== -->
+    <!-- ========== Start js File ========== -->
+    <script src="js/index.js"></script>
+    <!-- ========== End js File ========== -->
+  </body>
+</html>

@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <!-- ========== Start FontAwesome ========== -->
+    <link rel="stylesheet" href="css/all.min.css" />
+    <!-- ========== End FontAwesome ========== -->
+    <!-- ========== Start Bootstrap ========== -->
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <!-- ========== End Bootstrap ========== -->
+    <!-- ========== Start Css File ========== -->
+    <link rel="stylesheet" href="css/index.css" />
+    <!-- ========== End Css File ========== -->
+  </head>
+  <body>
+    <main id="homeBtn">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-3 col-md-3 p-0">
+            <aside id="aside" class="shadow vh-100">
+              <i id="close-sidebar" class="fa-solid fa-xmark close-icon"></i>
+              <header class="logo-header">
+                <div class="logo pt-3">
+                  <h1
+                    class="text-uppercase montserrat-bold fs-20 fit-content mx-auto"
+                  >
+                    Campus Control
+                  </h1>
+                </div>
+              </header>
+
+              <div
+                class="sidebar-img d-flex justify-content-center mt-2 position-relative"
+              >
+                <img
+                  id="dashboard-user-image"
+                  src=""
+                  class="img-sidebar img-fluid object-fit-cover"
+                  alt="Admin Picture"
+                />
+                <span
+                  id="update-photo-overlay"
+                  class="img-design d-flex flex-column align-items-center fs-14 montserrat-med cursor-pointer"
+                >
+                  <i class="fa-solid fa-plus"></i>
+                  Update Photo
+                </span>
+                <input
+                  type="file"
+                  id="hidden-file-input"
+                  accept="image/*"
+                  hidden
+                />
+              </div>
+              <div class="text-center mt-2">
+                <p id="dashboard-username" class="montserrat-bold fs-17 mb-1">
+                  Mohamed Fawzei
+                </p>
+                <p
+                  id="dashboard-role"
+                  class="title montserrat-med fs-14 text-main-color"
+                >
+                  Admin
+                </p>
+              </div>
+
+              <div class="sidebar-list d-flex justify-content-center mt-3">
+                <ul class="nav flex-column p-0 montserrat-med fs-14">
+                  <li class="nav-item">
+                    <a
+                      class="nav-link active"
+                      href="#"
+                      data-target="home-section"
+                    >
+                      <i class="fa-solid fa-house-chimney"></i><span>Home</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="course-section">
+                      <i class="fa-regular fa-bookmark"></i><span>Courses</span>
+                    </a>
+                  </li>
+
+                  <li id="my-courses-link" class="nav-item hidden">
+                    <a
+                      class="nav-link"
+                      href="#"
+                      data-target="my-courses-section"
+                    >
+                      <i class="fa-solid fa-book-open"></i
+                      ><span>My Courses</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="students-section">
+                      <i class="fa-solid fa-graduation-cap"></i
+                      ><span>Students</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="payment-section">
+                      <i class="fa-solid fa-dollar-sign"></i
+                      ><span>Payment</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#" data-target="settings-section">
+                      <i class="fa-solid fa-gear"></i><span>Settings</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+              <div
+                class="log-out d-flex align-items-center justify-content-center text-main-color mt-auto pt-3"
+              >
+                <a class="text-main-color" href="index.html">
+                  <span class="text-capitalize pe-2">Log out</span>
+                </a>
+                <i class="fa-solid fa-right-from-bracket"></i>
+              </div>
+            </aside>
+          </div>
+
+          <div class="col-lg-9 col-md-9 vh-100 overflow-auto my-col">
+            <header
+              class="main-header d-flex align-items-center justify-content-between p-3"
+            >
+              <div class="header-left cursor-pointer d-flex align-items-center">
+                <i id="menu-toggle" class="fa-solid fa-bars toggle-icon"></i>
+              </div>
+              <div class="header-right d-flex align-items-center">
+                <div class="search-container position-relative">
+                  <i class="fa-solid fa-magnifying-glass search-icon fs-14"></i>
+                  <input
+                    type="text"
+                    class="search-input montserrat-med fs-14"
+                    placeholder="Search..."
+                  />
+                </div>
+                <div class="action-icons d-flex align-items-center">
+                  <i class="fa-regular fa-bell cursor-pointer fs-17 ms-3"></i>
+                </div>
+              </div>
+            </header>
+
+            <main class="">
+              <section id="home-section">
+                <div class="row mt-4">
+                  <div class="col-11 mx-auto col-sm-6 col-md-3 mb-4">
+                    <div class="card-item card-skyblue h-100 p-3 rounded-3">
+                      <i
+                        class="fa-solid fa-graduation-cap student-icon fs-32"
+                      ></i>
+                      <p
+                        class="card-title mt-3 mb-2 montserrat-med gray-color fs-14"
+                      >
+                        Students
+                      </p>
+                      <h2
+                        id="students-count"
+                        class="card-value text-end montserrat-bold fs-32"
+                      ></h2>
+                    </div>
+                  </div>
+                  <div class="col-11 mx-auto col-sm-6 col-md-3 mb-4">
+                    <div class="card-item card-pink h-100 p-3 rounded-3">
+                      <i class="fa-regular fa-bookmark course-icon fs-32"></i>
+                      <p
+                        class="card-title mt-3 mb-2 montserrat-med gray-color fs-14"
+                      >
+                        Course
+                      </p>
+                      <h2
+                        id="course-count"
+                        class="card-value text-end montserrat-bold fs-32"
+                      ></h2>
+                    </div>
+                  </div>
+                  <div class="col-11 mx-auto col-sm-6 col-md-3 mb-4">
+                    <div
+                      class="card-item card-yellow-light h-100 p-3 rounded-3"
+                    >
+                      <i class="fa-solid fa-dollar-sign dollar-icon fs-32"></i>
+                      <p
+                        class="card-title mt-3 mb-2 montserrat-med gray-color fs-14"
+                      >
+                        Payments
+                      </p>
+                      <h2
+                        id="payments-total"
+                        class="card-value text-end montserrat-bold"
+                      ></h2>
+                    </div>
+                  </div>
+                  <div class="col-11 mx-auto col-sm-6 col-md-3 mb-4">
+                    <div
+                      class="card-item card-yellow-dark h-100 p-3 rounded-3 linear"
+                    >
+                      <i
+                        class="fa-regular fa-user card-icon fs-32 text-white"
+                      ></i>
+                      <p
+                        class="card-title mt-3 mb-2 montserrat-med text-white fs-14"
+                      >
+                        Users
+                      </p>
+                      <h2
+                        id="users-count"
+                        class="card-value text-end montserrat-bold"
+                      ></h2>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section id="course-section" class="hidden">
+                <div class="courses-container p-4 rounded-3 bg-white shadow-sm">
+                  <nav
+                    class="nav nav-tabs courses-nav mb-4 flex-column flex-md-row montserrat-med fs-14"
+                  >
+                    <a class="nav-link active" href="#" data-category="all"
+                      >All courses</a
+                    >
+                    <a class="nav-link" href="#" data-category="Design"
+                      >Design</a
+                    >
+                    <a class="nav-link" href="#" data-category="Programming"
+                      >Programming</a
+                    >
+                    <a class="nav-link" href="#" data-category="Data Analysis"
+                      >Data Analysis</a
+                    >
+                    <a
+                      class="nav-link"
+                      href="#"
+                      data-category="Frontend Development"
+                      >Frontend Development</a
+                    >
+                    <a class="nav-link" href="#" data-category="Letter Writing"
+                      >Letter Writing</a
+                    >
+                    <a
+                      class="nav-link"
+                      href="#"
+                      data-category="Information Technology"
+                      >Information Technology</a
+                    >
+                  </nav>
+
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3 border-bottom pb-3"
+                  >
+                    <h2 id="courses-heading" class="montserrat-bold fs-22 mb-0">
+                      All courses
+                    </h2>
+                    <button
+                      class="btn montserrat-semiBold mybtn fs-14"
+                      id="addNewCourseBtn"
+                    >
+                      Add New Course
+                    </button>
+                  </div>
+
+                  <div id="courses-list-body" class="row"></div>
+
+                  <nav class="d-flex justify-content-center">
+                    <ul class="pagination rounded-pill">
+                      <li class="page-item">
+                        <a class="page-link" href="#">&laquo;&laquo;</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">&laquo;</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item active">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">3</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">4</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">&raquo;</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">&raquo;&raquo;</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </section>
+              <section id="my-courses-section" class="hidden">
+                <h2 class="montserrat-bold fs-22 mb-4 mt-4 border-bottom pb-4">
+                  My Enrolled Courses
+                </h2>
+                <div id="my-courses-list-body" class="row"></div>
+              </section>
+              <section
+                id="students-section"
+                class="hidden student-list-container"
+              >
+                <header>
+                  <div class="row pt-3 align-items-center border-bottom pb-3">
+                    <div class="col-6">
+                      <h2 class="montserrat-bold fs-22 text-capitalize m-0">
+                        students list
+                      </h2>
+                    </div>
+
+                    <div
+                      class="col-6 justify-content-end d-flex align-items-center"
+                    >
+                      <div class="newStudentBtn">
+                        <button
+                          id="addNewStudentBtn"
+                          class="montserrat-med fs-14 p-2 rounded my-btn"
+                        >
+                          Add New Student
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </header>
+                <div
+                  class="list-header row d-none d-lg-flex align-items-lg-center mb-3 mt-3 montserrat-med fs-14 gray-color"
+                >
+                  <div class="col-lg-3 my-name">Name</div>
+                  <div class="col-lg-2 my-email">Email</div>
+                  <div class="col-lg-2 offset-1">Phone</div>
+                  <div class="col-lg-3">Date of admission</div>
+                </div>
+                <div id="student-list-body"></div>
+              </section>
+              <section id="payment-section" class="hidden">
+                <div
+                  class="payments-container p-4 rounded-3 bg-white shadow-sm"
+                >
+                  <div
+                    class="d-flex align-items-center mb-4 justify-content-between"
+                  >
+                    <h2 class="montserrat-bold fs-17 m-0">Payment Details</h2>
+                    <button
+                      id="addNewPaymentBtn"
+                      class="montserrat-med fs-14 p-2 rounded mybtn"
+                    >
+                      Add New Payment
+                    </button>
+                  </div>
+
+                  <div
+                    class="payment-header row d-none d-lg-flex fw-bold p-2 mt-3 mb-2 montserrat-med fs-14 gray-color"
+                  >
+                    <div class="col-lg-2">Name</div>
+                    <div class="col-lg-2">Course</div>
+                    <div class="col-lg-2">Order Number</div>
+                    <div class="col-lg-2">Amount Paid</div>
+                    <div class="col-lg-2">Balance Amount</div>
+                    <div class="col-lg-1">Date</div>
+                    <div class="col-lg-1 text-end">Actions</div>
+                  </div>
+
+                  <div id="payments-list-body"></div>
+                </div>
+              </section>
+              <section id="settings-section" class="hidden">
+                <div class="settings-container p-4">
+                  <div class="card shadow-sm border-0 rounded-3">
+                    <div class="card-body p-4">
+                      <div
+                        class="d-flex justify-content-between align-items-center flex-column mb-4 pb-3 border-bottom flex-md-row"
+                      >
+                        <div
+                          class="d-flex align-items-center flex-column text-center text-md-start flex-md-row"
+                        >
+                          <img
+                            id="settings-user-image"
+                            src="imgs/default pp.jpg"
+                            class="avatar me-3"
+                            alt="User Avatar"
+                          />
+                          <div>
+                            <h5
+                              id="settings-username"
+                              class="mb-0 montserrat-bold fs-17 mt-2 mt-md-0"
+                            ></h5>
+                            <h6
+                              id="settings-role"
+                              class="text-muted text-main-color m-0 fs-14"
+                            ></h6>
+                          </div>
+                        </div>
+                        <button
+                          id="editProfileBtn"
+                          class="btn btn-warning btn-sm montserrat-bold fs-14 mt-3 mt-md-0"
+                        >
+                          Edit Profile
+                        </button>
+                      </div>
+
+                      <nav class="nav flex-column settings-nav">
+                        <a class="nav-link" href="#" id="goToNotificationsLink">
+                          <i class="fa-regular fa-bell me-3"></i> Notifications
+                          <i class="fa-solid fa-chevron-right ms-auto"></i>
+                        </a>
+                        <a class="nav-link" href="#" id="accountSettingsLink">
+                          <i class="fa-regular fa-user me-3"></i> Account
+                          Settings
+                          <i class="fa-solid fa-chevron-right ms-auto"></i>
+                        </a>
+                        <a class="nav-link" href="#">
+                          <i class="fa-solid fa-shield-halved me-3"></i> Privacy
+                          <i class="fa-solid fa-chevron-right ms-auto"></i>
+                        </a>
+                        <a class="nav-link" href="#">
+                          <i class="fa-regular fa-circle-question me-3"></i>
+                          Help & Support
+                          <i class="fa-solid fa-chevron-right ms-auto"></i>
+                        </a>
+                        <a class="nav-link text-main-color" href="index.html">
+                          <i class="fa-solid fa-right-from-bracket me-3"></i>
+                          Logout
+                        </a>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section id="notification-settings-section" class="hidden">
+                <div class="settings-container p-4">
+                  <div class="card shadow-sm border-0 rounded-3">
+                    <div class="card-body p-4">
+                      <div
+                        class="d-flex align-items-center mb-4 pb-3 border-bottom"
+                      >
+                        <button
+                          id="backToSettingsBtn"
+                          class="btn btn-link text-secondary me-2 p-0"
+                        >
+                          <i class="fa-solid fa-arrow-left fs-5"></i>
+                        </button>
+                        <h5 class="mb-0 montserrat-bold">
+                          Notification Settings
+                        </h5>
+                      </div>
+
+                      <div class="mb-3 form-check form-switch form-switch-lg">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="courseUpdatesToggle"
+                          checked
+                        />
+                        <label
+                          class="form-check-label ms-2"
+                          for="courseUpdatesToggle"
+                          >Course Updates</label
+                        >
+                      </div>
+                      <div class="mb-3 form-check form-switch form-switch-lg">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="paymentRemindersToggle"
+                          checked
+                        />
+                        <label
+                          class="form-check-label ms-2"
+                          for="paymentRemindersToggle"
+                          >Payment Reminders</label
+                        >
+                      </div>
+                      <div class="mb-4 form-check form-switch form-switch-lg">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="announcementsToggle"
+                        />
+                        <label
+                          class="form-check-label ms-2"
+                          for="announcementsToggle"
+                          >Announcements</label
+                        >
+                      </div>
+
+                      <a class="nav-link settings-nav-item" href="#">
+                        Notification Sound
+                        <span class="ms-auto text-muted me-2">Default</span>
+                        <i class="fa-solid fa-chevron-right text-muted"></i>
+                      </a>
+
+                      <div class="mt-4 form-check form-switch form-switch-lg">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          role="switch"
+                          id="doNotDisturbToggle"
+                        />
+                        <label
+                          class="form-check-label ms-2"
+                          for="doNotDisturbToggle"
+                          >Do Not Disturb</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section id="account-settings-section" class="hidden">
+                <div class="accSettings-container p-4">
+                  <div class="card shadow-sm border-0 rounded-3">
+                    <div class="card-body p-4">
+                      <div
+                        class="d-flex align-items-center mb-4 pb-3 border-bottom"
+                      >
+                        <button
+                          id="backToSettingsBtn-From-Account"
+                          class="btn btn-link text-secondary me-2 p-0"
+                        >
+                          <i class="fa-solid fa-arrow-left fs-5"></i>
+                        </button>
+                        <h5 class="mb-0 montserrat-bold">Account Settings</h5>
+                      </div>
+
+                      <div class="text-center mb-4">
+                        <img
+                          id="account-settings-image"
+                          src=""
+                          class="img-sidebar img-fluid object-fit-cover rounded-circle mb-2"
+                          style="width: 100px; height: 100px"
+                          alt="User Avatar"
+                        />
+                        <h5
+                          id="account-settings-username"
+                          class="mb-0 montserrat-bold"
+                        ></h5>
+                        <h6
+                          id="account-settings-email-display"
+                          class="text-muted"
+                        ></h6>
+                      </div>
+
+                      <div class="account-settings-form">
+                        <h6 class="text-muted montserrat-bold mb-3">
+                          PERSONAL INFORMATION
+                        </h6>
+                        <div class="mb-3">
+                          <label for="account-fullname" class="form-label"
+                            >Full Name</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control"
+                            id="account-fullname"
+                            value="Alex Doe"
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="account-email" class="form-label"
+                            >Email Address</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            id="account-email"
+                            value=""
+                          />
+                        </div>
+                        <div class="mb-3">
+                          <label for="account-password" class="form-label"
+                            >New Password</label
+                          >
+                          <input
+                            type="password"
+                            class="form-control"
+                            id="account-password"
+                            placeholder="Enter new password"
+                          />
+                        </div>
+                      </div>
+
+                      <div class="linked-accounts mt-5">
+                        <h6 class="text-muted montserrat-bold mb-3">
+                          LINKED ACCOUNTS
+                        </h6>
+                        <div class="card linked-account-card mb-3">
+                          <div class="card-body d-flex align-items-center">
+                            <img
+                              src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                              alt="Google"
+                              style="width: 40px; height: 40px"
+                            />
+                            <span class="ms-3 montserrat-med"
+                              >Sign in with Google</span
+                            >
+                            <button
+                              class="btn btn-sm btn-outline-secondary ms-auto"
+                              disabled
+                            >
+                              Connected
+                            </button>
+                          </div>
+                        </div>
+                        <div class="card linked-account-card">
+                          <div class="card-body d-flex align-items-center">
+                            <i
+                              class="fa-brands fa-apple fs-2"
+                              style="width: 40px; text-align: center"
+                            ></i>
+                            <span class="ms-3 montserrat-med"
+                              >Sign in with Apple</span
+                            >
+                            <button
+                              class="btn btn-sm btn-outline-primary ms-auto text-main-color connectBtn montserrat-med"
+                            >
+                              Connect
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="subscription-section mt-5">
+                        <h6 class="text-muted montserrat-bold mb-3">
+                          SUBSCRIPTION
+                        </h6>
+                        <div class="card linked-account-card">
+                          <div class="card-body d-flex align-items-center">
+                            <div>
+                              <h6 class="mb-0 montserrat-bold">Pro Plan</h6>
+                              <small class="text-muted"
+                                >Renews on Jan 23, 2026</small
+                              ><br />
+                              <a href="#" class="text-main-color small"
+                                >View Payment History</a
+                              >
+                            </div>
+                            <button
+                              class="btn btn-warning btn-sm ms-auto"
+                              style="
+                                background-color: #fef6e0;
+                                color: #e8a800;
+                                border: none;
+                                font-weight: bold;
+                              "
+                            >
+                              Manage
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="mt-5 d-grid gap-2">
+                        <button
+                          id="saveAccountChangesBtn"
+                          class="btn bg-main-color text-white montserrat-bold p-2"
+                        >
+                          Save Changes
+                        </button>
+                        <button
+                          id="cancelAccountChangesBtn"
+                          class="btn btn-link text-muted montserrat-bold text-decoration-none"
+                        >
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </main>
+          </div>
+        </div>
+      </div>
+    </main>
+    <input
+      type="file"
+      id="edit-profile-image-input"
+      accept="image/*"
+      class="d-none"
+    />
+    <!-- ========== Start Bootstrap ========== -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- ========== End Bootstrap ========== -->
+    <script src="js/sweetalert.js"></script>
+    <!-- ========== Start js File ========== -->
+    <script src="js/Dashboard.js"></script>
+    <!-- ========== End js File ========== -->
+  </body>
+</html>

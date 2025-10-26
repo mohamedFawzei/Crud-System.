@@ -219,7 +219,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   //course list display
-  //displays courses with category filtering
   function displayCourses(category, currentPage = 1) {
     const itemsPerPage = 6;
     coursesListBody.innerHTML = "";
@@ -275,7 +274,6 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // my courses display
-  // Displays courses added by the current student
   function displayMyCourses() {
     let currentUser = getCurrentUser();
     // clear list
@@ -444,7 +442,7 @@ document.addEventListener("DOMContentLoaded", function () {
           // if form submitted and validated
           if (result.isConfirmed) {
             let newStudentData = result.value;
-            let allUsers = getUsersFromStorage(); // Use helper
+            let allUsers = getUsersFromStorage(); 
             // check for duplicate email
             if (allUsers.find((user) => user.email === newStudentData.email)) {
               Swal.fire("Error!", "This email is already registered.", "error");
@@ -454,10 +452,10 @@ document.addEventListener("DOMContentLoaded", function () {
             let newStudent = {
               ...newStudentData,
               role: "student",
-              profilePicture: "imgs/default-avatar.png", // Use correct default image path
+              profilePicture: "imgs/default pp.jpg",
             };
             allUsers.push(newStudent);
-            saveUsersToStorage(allUsers); // Use helper
+            saveUsersToStorage(allUsers);
             displayStudents();
             Swal.fire("Added!", "New student has been added.", "success");
           }
@@ -479,7 +477,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // use event delegation
     studentListBody.addEventListener("click", function (event) {
       let email = event.target.getAttribute("data-email");
-      if (!email) return; // ignore clicks not on icons
+      if (!email) return;
 
       // delete action
       if (event.target.classList.contains("fa-trash")) {
@@ -495,9 +493,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }).then((result) => {
           if (result.isConfirmed) {
             // filter out user, save, refresh list
-            let allUsers = getUsersFromStorage(); // Use helper
+            let allUsers = getUsersFromStorage();
             let updatedUsers = allUsers.filter((user) => user.email !== email);
-            saveUsersToStorage(updatedUsers); // Use helper
+            saveUsersToStorage(updatedUsers);
             displayStudents();
             Swal.fire("Deleted!", "The student has been deleted.", "success");
           }
@@ -506,7 +504,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       // update action
       if (event.target.classList.contains("fa-pen-to-square")) {
-        let allUsers = getUsersFromStorage(); // Use helper
+        let allUsers = getUsersFromStorage();
         let studentToUpdate = allUsers.find((user) => user.email === email);
         // if student found, show update form
         if (studentToUpdate) {
@@ -534,7 +532,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 allUsers[userIndex].lastName = updatedData.lastName;
                 allUsers[userIndex].phone = updatedData.phone;
               }
-              saveUsersToStorage(allUsers); // Use helper
+              saveUsersToStorage(allUsers);
               displayStudents();
               Swal.fire(
                 "Updated!",
@@ -913,7 +911,7 @@ document.addEventListener("DOMContentLoaded", function () {
       courseNavLinks.forEach((navLink) => navLink.classList.remove("active"));
       this.classList.add("active");
       document.getElementById("courses-heading").textContent = this.textContent;
-      displayCourses(this.getAttribute("data-category"), 1); // display category page 1 *
+      displayCourses(this.getAttribute("data-category"), 1);
     });
   });
 
@@ -929,7 +927,6 @@ document.addEventListener("DOMContentLoaded", function () {
           ".courses-nav .nav-link.active"
         );
         let category = activeCategoryLink.getAttribute("data-category");
-        // display courses for clicked page and current category
         if (page) {
           displayCourses(category, page);
         }
@@ -953,7 +950,7 @@ document.addEventListener("DOMContentLoaded", function () {
       if (targetSection) {
         targetSection.classList.remove("hidden");
         if (targetId === "students-section") displayStudents();
-        if (targetId === "course-section") displayCourses("all", 1); // Reset to page 1
+        if (targetId === "course-section") displayCourses("all", 1);
         if (targetId === "my-courses-section") displayMyCourses();
         if (targetId === "payment-section") displayPayments();
       }
